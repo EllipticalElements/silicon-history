@@ -1,10 +1,10 @@
 {
   "name": "silicon-history",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "S. Francis"
   ],
-  "description": "",
+  "description": "semi-conductive history web component",
   "keywords": [
     "web-component",
     "polymer",

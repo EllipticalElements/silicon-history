@@ -1,11 +1,11 @@
 {
-  "name": "md-component",
-  "description": "md-component",
-  "version": "1.0.0",
+  "name": "silicon-history",
+  "description": "embedded partial history web component",
+  "version": "1.0.1",
   "author": "S. Francis",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EllipticalElements/md-component.git"
+    "url": "https://github.com/EllipticalElements/silicon-history.git"
   }
 }
