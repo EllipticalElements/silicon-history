@@ -12,7 +12,7 @@
     Polymer({
         is: 'silicon-history',
         properties:{
-            _selector:{
+            selector:{
                 type:String,
                 value:'silicon-history a:not([data-route])'
             },
@@ -35,7 +35,7 @@
 
         detached:function(){
             var EVENT = ('ontouchend' in document) ? 'touchstart tap click' : 'click';
-            var SELECTOR=this._selector;
+            var SELECTOR=this.selector;
             var DOCUMENT=$(document);
             DOCUMENT.off(EVENT, SELECTOR, this._onRequest.bind(this));
         },
@@ -43,7 +43,7 @@
         _startHistory:function(){
             var REQUEST_EVENT='OnDocumentHistoryRequest';
             var EVENT = ('ontouchend' in document) ? 'touchstart tap click' : 'click';
-            var SELECTOR=this._selector;
+            var SELECTOR=this.selector;
             var DOCUMENT=$(document);
             DOCUMENT.trigger(REQUEST_EVENT, {disableRedirectOnStart:this.disableInitRedirect});
             DOCUMENT.on(EVENT, SELECTOR, this._onRequest.bind(this));
