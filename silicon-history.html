@@ -22,6 +22,10 @@
             disableInitRedirect:{
                 type:Boolean,
                 value:false
+            },
+            touchEvent:{
+                type:String,
+                value:'touchend'
             }
         },
 
@@ -34,15 +38,17 @@
         },
 
         detached:function(){
-            var EVENT = ('ontouchend' in document) ? 'touchstart tap click' : 'click';
+            var touchEvent=this.touchEvent;
+            var EVENT = ('ontouchend' in document) ? touchEvent : 'click';
             var SELECTOR=this.selector;
             var DOCUMENT=$(document);
             DOCUMENT.off(EVENT, SELECTOR, this._onRequest.bind(this));
         },
 
         _startHistory:function(){
+            var touchEvent=this.touchEvent;
             var REQUEST_EVENT='OnDocumentHistoryRequest';
-            var EVENT = ('ontouchend' in document) ? 'touchstart tap click' : 'click';
+            var EVENT = ('ontouchend' in document) ? touchEvent : 'click';
             var SELECTOR=this.selector;
             var DOCUMENT=$(document);
             DOCUMENT.trigger(REQUEST_EVENT, {disableRedirectOnStart:this.disableInitRedirect});
